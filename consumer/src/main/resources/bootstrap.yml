@@ -1,0 +1,23 @@
+nacos:
+  server-addr: 124.70.142.35:8848
+  namespace: 4c7beb4b-2227-42ec-921a-8074971b8d8b
+  username: nacos
+  password: nacos
+spring:
+  application:
+    name: consumer
+  cloud:
+    nacos:
+      config:
+        server-addr: ${nacos.server-addr}
+        file-extension: yaml
+        namespace: ${nacos.namespace}
+      discovery:
+        namespace: ${nacos.namespace}
+        server-addr: ${nacos.server-addr}
+  redis:
+    host: 124.70.142.35
+    port: 6379
+    password: 96maTING
+server:
+  port: 8005
